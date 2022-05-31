@@ -1,0 +1,15 @@
+D:\Projects\C#\PexesoGame\PexesoGame\bin\Debug\net6.0\PexesoGame.exe
+D:\Projects\C#\PexesoGame\PexesoGame\bin\Debug\net6.0\PexesoGame.deps.json
+D:\Projects\C#\PexesoGame\PexesoGame\bin\Debug\net6.0\PexesoGame.runtimeconfig.json
+D:\Projects\C#\PexesoGame\PexesoGame\bin\Debug\net6.0\PexesoGame.dll
+D:\Projects\C#\PexesoGame\PexesoGame\bin\Debug\net6.0\ref\PexesoGame.dll
+D:\Projects\C#\PexesoGame\PexesoGame\bin\Debug\net6.0\PexesoGame.pdb
+D:\Projects\C#\PexesoGame\PexesoGame\obj\Debug\net6.0\PexesoGame.csproj.AssemblyReference.cache
+D:\Projects\C#\PexesoGame\PexesoGame\obj\Debug\net6.0\PexesoGame.GeneratedMSBuildEditorConfig.editorconfig
+D:\Projects\C#\PexesoGame\PexesoGame\obj\Debug\net6.0\PexesoGame.AssemblyInfoInputs.cache
+D:\Projects\C#\PexesoGame\PexesoGame\obj\Debug\net6.0\PexesoGame.AssemblyInfo.cs
+D:\Projects\C#\PexesoGame\PexesoGame\obj\Debug\net6.0\PexesoGame.csproj.CoreCompileInputs.cache
+D:\Projects\C#\PexesoGame\PexesoGame\obj\Debug\net6.0\PexesoGame.dll
+D:\Projects\C#\PexesoGame\PexesoGame\obj\Debug\net6.0\ref\PexesoGame.dll
+D:\Projects\C#\PexesoGame\PexesoGame\obj\Debug\net6.0\PexesoGame.pdb
+D:\Projects\C#\PexesoGame\PexesoGame\obj\Debug\net6.0\PexesoGame.genruntimeconfig.cache

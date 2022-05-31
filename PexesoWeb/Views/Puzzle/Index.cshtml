@@ -1,0 +1,104 @@
+﻿@model PuzzleModel
+@{
+    ViewData["Title"] = "Puzzle Page";
+}
+
+
+<div class="container text-center">
+    <h1 class="display-4">Puzzle @Model.Field.ColumnCount x @Model.Field.RowCount</h1>
+    
+    @{
+        if (!Model.Field.CheckWin())
+        {
+            if (Model.Field.FirstTimePlay)
+            {
+                <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+                    PlayGame
+                </button>
+                <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog">
+                        <div class="modal-content">
+                            <div class="modal-body">
+                                <form method="post">
+                                    <label>Nickname:</label><br/>
+                                    <input type="text" name="nickname"/><br/><br/>
+                                    <input type="submit" class="btn btn-success" value="StartGame"/>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <h2 class="display-4">@Model.Field.nick</h2>
+                <div id="game" class="row justify-content-center">
+                    @{
+                        for (int i = 0; i < Model.Field.RowCount; i++)
+                        {
+                            <div class="col-auto">
+                                @for (int j = 0; j < Model.Field.ColumnCount; j++)
+                                {
+
+                                    var card = Model.Field.GetCard(i, j);
+
+
+                                    <a class="gameButton" onclick="openCard(@card.Index)">
+
+                                        @if (!card.Shown)
+                                        {
+                                            <img src="/images/image_0.png" width="150" height="150">
+                                        }
+                                        else
+                                        {
+                                            <img src="/images/image_@(card.Id).png" width="150" height="150">
+                                        }
+                                    </a>
+
+                                }
+                            </div>
+                        }
+
+                    }
+                    @{
+                        <a type="button" id="randomOpen" class="btn btn-primary col-md-2" onclick="openRandPair()">Open random pair</a>
+                        if (Model.Field.firstCard != null && Model.Field.secondCard != null)
+                        {
+                            <a type="button" id="checkButton" class="btn btn-primary col-md-2" onclick="check()">Check cards</a>
+                        }
+                    }
+                </div>
+
+            }
+        }
+        else
+        {
+            <h2 class="text-center">You are win!</h2>
+            <a class="text-center" href="/Puzzle/Comment">Write Comment</a>
+        }
+
+}
+
+</div> 
+
+<script>
+    function openCard(id) {
+        let url = "/Puzzle/OpenCard?card=" +id;
+        $("#game").load(url + ' #game');
+    }
+    function openRandPair() {
+        let url = "/Puzzle/OpenRandomPair";
+        $("#game").load(url + ' #game');
+    }
+    function check() {
+        let url = "/Puzzle/Check";
+        $("#game").load(url + ' #game');
+    }
+    function save(){
+         let url = "/Puzzle/Save";
+         $("#main").load(url + ' #main');
+         document.getElementById('game').load(url + ' #game')
+    }
+</script>
+
+
